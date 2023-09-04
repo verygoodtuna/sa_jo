@@ -17,7 +17,7 @@ $(function () {
         $('.wrap').addClass('on');
     })
 
-    $('.moblie_menu.on::before').on('click', function () {
+    $('.moblie_close').on('click', function () {
         $('.moblie_menu').removeClass('on');
         $('.wrap').removeClass('on');
     })

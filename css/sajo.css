@@ -618,11 +618,10 @@
     width: 70%;
     background: #fff;
     border-right: 1px solid #fff;
-    transition: 0.5s;
+    transition: 0.7s;
 
     z-index: 1002;
     opacity: 0;
-
 }
 
 .wrap {
@@ -646,9 +645,7 @@
     opacity: 1;
 }
 
-.moblie_menu.on::before {
-    content: '\e921';
-    font-family: xeicon;
+.moblie_close {
     position: absolute;
     top: 15px;
     left: 110%;
