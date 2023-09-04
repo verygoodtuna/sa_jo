@@ -514,6 +514,13 @@
     margin: 0 50px 0 0;
 }
 
+.header .lnb_con .left .t img {
+    position: static;
+    transform: translate(0, 0);
+    width: 25px;
+    height: 15px;
+}
+
 .header .lnb_con .left .t h2{
     font-size: 20px;
     font-weight: 500;
@@ -622,27 +629,35 @@
 
     z-index: 1002;
     opacity: 0;
+    visibility: hidden;
+
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
-.wrap {
-    transition: 0.5s;
+.moblie_box.on .moblie_menu {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
 }
 
-.wrap.on::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.back {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
     z-index: 1001;
+    transition: 0.7s;
+
+    opacity: 0;
+    visibility: hidden;
 }
 
-.moblie_menu.on {
-    left: 0;
+.moblie_box.on .back {
     opacity: 1;
+    visibility: visible;
 }
 
 .moblie_close {
@@ -718,39 +733,60 @@
     color: #fff;
 }
 
-.moblie_menu .Tuna {
+.moblie_menu .tuna_box {
     border-bottom: 8px solid #eee;
 }
 
-.moblie_menu .Tuna>li {
+.moblie_menu .tuna_box ul>li {
     font-size: 13px;
     font-weight: 500;
     color: #222;
     padding: 16px 20px;
 }
 
-.moblie_menu .Tuna>li i {
+.moblie_menu .tuna_box ul>li i {
     font-size: 16px;
     margin: 0 0 0 auto;
+    transition: 0.5s;
 }
 
-.moblie_menu .Tuna>li~li {
+.moblie_menu .tuna_box ul>li i.on{
+    transform: rotate(180deg);
+}
+
+.moblie_menu .tuna_box ul>li~li {
     border-top: 1px solid #eee;
 }
 
-.moblie_menu .Tuna>li> a {
+.moblie_menu .tuna_box ul>li> a {
     display: flex;
     gap: 5px;
 }
 
-.moblie_menu .Tuna>li img {
+.moblie_menu .tuna_box ul>li img {
     width: 20px;
     height: 14px;
 }
 
-.moblie_menu .Tuna .tuna {
+.moblie_menu .tuna_box ul>li .tuna {
     display: none;
 }
+
+.moblie_menu .tuna_box ul>li .tuna.on {
+    display: block;
+}
+
+.moblie_menu .tuna_box ul>li .tuna>li {
+    padding: 16px 0;
+    font-size: 12px;
+    color: #555555;
+    font-weight: 400;
+}
+
+.moblie_menu .tuna_box ul>li .tuna>li:last-child {
+    padding: 16px 0 0 0;
+}
+
 
 .moblie_menu .sajo {
     border-bottom: 8px solid #eee;
@@ -788,6 +824,8 @@
 .moblie_menu .sajo>li~li {
     border-top: 1px solid #eee;
 }
+
+
 
 
 
