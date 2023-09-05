@@ -20,7 +20,7 @@ $(function () {
         e.preventDefault();
         $(this).next().stop().slideToggle();
         $(this).parent().siblings().find('.tuna').stop().slideUp();
-        $('.tuna_box ul>li>a i').toggleClass('on');
+        $(this).find('i').toggleClass('on');
     })
 
     $('.moblie_box').on('wheel', function (e) {
